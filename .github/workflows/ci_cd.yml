@@ -83,8 +83,5 @@ jobs:
       - name: Build Docker Image with correct tag
         run: docker build -t ${{ secrets.DOC_USER }}/mlopsfinal:v1 .
 
-      - name: Push Docker Image
-        run: docker push ${{ secrets.DOC_USER }}/mlopsfinal:v1
-
       - name: Run Inference Inside Container
         run: docker run --rm ${{ secrets.DOC_USER }}/mlopsfinal:v1 python src/inference.py

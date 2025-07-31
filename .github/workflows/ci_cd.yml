@@ -80,7 +80,7 @@ jobs:
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOC_PASSWORD }}" | docker login -u "${{ secrets.DOC_USER }}" --password-stdin
 
-      - name: Build Docker Image
+      - name: Build Docker Image with correct tag
         run: docker build -t ${{ secrets.DOC_USER }}/mlopsfinal:v1 .
 
       - name: Push Docker Image
